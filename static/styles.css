@@ -12,12 +12,15 @@ h1 {
   font-size: 55px;
 }
 
+form {
+    display: inline-block;
+}
+
 input {
-  border-radius: 45%;
+  border-radius: 25px;
   background-color: #34bf9a;
   font-size: 20px;
   border: none;
-  display: inline-block;
   text-decoration: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -28,7 +31,7 @@ input:hover {
 }
 
 #hot-cocoa-img {
-  width: 50px;
+  width: 70px;
 }
 
 #snow {
