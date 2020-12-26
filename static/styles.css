@@ -1,3 +1,42 @@
 html {
-  color: purple;
+  background: #c2fff4;
+  font-family: Roboto, sans-serif;
+  text-align: center;
+}
+
+body {
+    margin-top: 8%;
+}
+
+h1 {
+  font-size: 55px;
+}
+
+input {
+  border-radius: 45%;
+  background-color: #34bf9a;
+  font-size: 20px;
+  border: none;
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+input:hover {
+  opacity: 80%;
+}
+
+#hot-cocoa-img {
+  width: 50px;
+}
+
+#snow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 100;
 }
