@@ -4,17 +4,11 @@ html {
   text-align: center;
 }
 
-body {
-    margin-top: 8%;
-}
+body { margin-top: 8%; }
 
-h1 {
-  font-size: 55px;
-}
+h1 { font-size: 55px; }
 
-form {
-    display: inline-block;
-}
+form { display: inline-block; }
 
 input {
   border-radius: 25px;
@@ -24,14 +18,14 @@ input {
   text-decoration: none;
   padding: 10px 20px;
   cursor: pointer;
+  margin: 5px;
 }
 
-input:hover {
-  opacity: 80%;
-}
+input:hover { opacity: 80%; }
 
 #hot-cocoa-img {
-  width: 70px;
+  width: 90px;
+  margin-bottom: -15px;
 }
 
 #snow {
@@ -42,4 +36,11 @@ input:hover {
   bottom: 0;
   pointer-events: none;
   z-index: 100;
+}
+
+.icons-footer {
+  font-size: 8px;
+  position: absolute;
+  bottom: 0;
+  height: 35px;
 }

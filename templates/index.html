@@ -5,22 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
     <script src="{{ url_for('static', filename='sketch.js') }}"></script>
 </head>
-<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles.css') }}">
 <body>
   <div id="snow"></div>
   <img src="{{ url_for('static', filename='hot_cocoa.svg') }}" id="hot-cocoa-img">
-  <h1>Generate a Christmas Gif & Customized Song Lyrics</h1>
+  <h1>Generate a Yule Log & Customized Song Lyrics</h1>
 
   <form action="/generate_lyrics" method="post">
     <input type="submit" name="submit_button" value="Generate Lyrics">
   </form>
 
-  <form action="/yule_log" method="post">
-    <input type="submit" name="submit_button" value="Share a Yule Log">
+  <form action="/share_yule_log" method="post">
+    <input type="submit" name="submit_button" value="Gift a Yule Log">
   </form>
-  <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+  <form action="/yule_log" method="post">
+    <input type="submit" name="submit_button" value="My Yule Log">
+  </form>
+
+  <div class="icons-footer">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 </body>
 </html>

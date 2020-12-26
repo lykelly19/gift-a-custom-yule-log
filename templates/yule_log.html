@@ -5,24 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yule Log</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+    html {
+      background: url("https://media.giphy.com/media/Hj7mksbFWIOdO/giphy.gif") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    #spotify-playlist {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    </style>
 </head>
-<style>
-html {
-  background: url("https://media.giphy.com/media/Hj7mksbFWIOdO/giphy.gif") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-#spotify-playlist {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-</style>
 <body>
-  <h1>Yule Log</h1>
-  <iframe src="https://open.spotify.com/embed/playlist/3CLNJhCOjntppUuW3xUR9s" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" id="spotify-playlist"></iframe>
+  {{ html_playlist_string | safe }}
 </body>
 </html>
