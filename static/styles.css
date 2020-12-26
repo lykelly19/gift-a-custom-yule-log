@@ -10,7 +10,7 @@ h1 { font-size: 55px; }
 
 form { display: inline-block; }
 
-input {
+.main-buttons {
   border-radius: 25px;
   background-color: #34bf9a;
   font-size: 20px;
@@ -41,6 +41,23 @@ input:hover { opacity: 80%; }
 .icons-footer {
   font-size: 8px;
   position: absolute;
-  bottom: 0;
-  height: 35px;
+  bottom: 25px;
+}
+
+.faq-button-container {
+  position: absolute;
+  bottom: 20px;
+  right: 2px;
+}
+
+.faq-button {
+  border-radius: 25px;
+  background-color: #8e2be0;
+  color: white;
+  font-size: 15px;
+  border: none;
+  text-decoration: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin: 5px;
 }
