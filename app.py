@@ -66,16 +66,16 @@ def send_yule_log_email():
     to.append(recipient_email)
 
     message = """\From: %s\nTo: %s\nSubject: %s\n%s
-    """ % (gmail_user, ", ".join(to), subject, body)
+    """ % (GMAIL_USER, ", ".join(to), subject, body)
 
     try:
         s = smtplib.SMTP('smtp.gmail.com', 587)
         s.starttls()
-        s.login(gmail_user, gmail_password)
+        s.login(GMAIL_USER, gmail_password)
 
         print(message)
 
-        s.sendmail(gmail_user, to, message)
+        s.sendmail(GMAIL_USER, to, message)
         s.quit()
         print("Email sent!")
     except:
