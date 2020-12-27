@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Website</title>
+    <title>Gift a Custom Yule Log</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
@@ -12,11 +12,7 @@
 <body>
   <div id="snow"></div>
   <img src="{{ url_for('static', filename='hot_cocoa.svg') }}" id="hot-cocoa-img">
-  <h1>Generate a Yule Log & Customized Song Lyrics</h1>
-
-  <form action="/generate_lyrics" method="post">
-    <input class="main-buttons" type="submit" name="submit_button" value="Generate Lyrics">
-  </form>
+  <h1>Gift a Custom Yule Log</h1>
 
   <form action="/share_yule_log" method="post">
     <input class="main-buttons" type="submit" name="submit_button" value="Gift & Customize a Yule Log">
@@ -29,7 +25,7 @@
   <div class="icons-footer">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
   <div class="faq-button-container">
-    <form action="/faq" method="post">
+    <form action="/faq">
       <input class="faq-button" type="submit" name="submit_button" value="Why Yule Log">
     </form>
   </div>

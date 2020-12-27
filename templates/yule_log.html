@@ -18,9 +18,30 @@
       bottom: 0;
       right: 0;
     }
+    .back-button-container {
+      position: absolute;
+      top: 15px;
+      left: 2px;
+    }
+    .back-button {
+      border-radius: 25px;
+      background-color: #0358ad;
+      color: white;
+      font-size: 15px;
+      border: none;
+      text-decoration: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      margin: 5px;
+    }
     </style>
 </head>
 <body>
+    <div class="back-button-container">
+      <form action="/" method="post">
+        <input class="back-button" type="submit" name="submit_button" value="< Back">
+      </form>
+    </div>
     <div class="spotify-playlist-container">
       {{ html_playlist_string | safe }}
     </div>

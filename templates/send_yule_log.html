@@ -11,7 +11,7 @@
       font-family: Roboto, sans-serif;
       text-align: center;
     }
-    body { margin-top: 3%; }
+    body { margin-top: 5%; }
     h1 { font-size: 55px; }
     #playlist-link {
       border-radius: 25px;
@@ -20,11 +20,10 @@
       border: none;
       padding: 10px 20px;
       cursor: text;
-      margin: 5px;
       opacity: 85%;
-      width: 380px;
+      max-width: 400px;
     }
-    #copy-button {
+    #buttons {
       border-radius: 25px;
       background-color: #34bf9a;
       font-size: 20px;
@@ -32,15 +31,51 @@
       text-decoration: none;
       padding: 10px 20px;
       cursor: pointer;
-      margin: 5px;
+      margin-left: 5px;
+      margin-top: 5px;
     }
-    #copy-button:hover { opacity: 80%; }
+    #buttons:hover { opacity: 80%; }
     #yule-log-img {
       width: 90px;
       margin-bottom: -20px;
     }
     #share-link-caption {
-      font-size: 16px;
+      font-size: 24px;
+      margin-bottom: -1px;
+    }
+    .icons-footer {
+      font-size: 8px;
+      position: absolute;
+      bottom: 25px;
+    }
+    .email-form-container {
+      margin: 45px auto 25px;
+    }
+    .email-form-container input {
+        border-radius: 25px;
+        font-size: 16px;
+        border: none;
+        padding: 8px 16px;
+        margin-top: 2px;
+        max-width: 400px;
+    }
+    #form-header { font-size: 24px; }
+    .form-section { margin-top: 8px; }
+    .back-button-container {
+      position: absolute;
+      top: 15px;
+      left: 2px;
+    }
+    .back-button {
+      border-radius: 25px;
+      background-color: #0358ad;
+      color: white;
+      font-size: 15px;
+      border: none;
+      text-decoration: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      margin: 5px;
     }
     </style>
     <script>
@@ -56,16 +91,52 @@
     </script>
 </head>
 <body>
+    <div class="back-button-container">
+      <form action="/share_yule_log" method="post">
+        <input class="back-button" type="submit" name="submit_button" value="< Back">
+      </form>
+    </div>
     <img src="{{ url_for('static', filename='yule_log.svg') }}" id="yule-log-img">
     <h1>Gift this Yule Log!</h1>
     {{ html_playlist_string | safe }}
     <p id="share-link-caption">Share this link!</p>
     {{ shareable_link_html | safe }}
-    <button onclick="getLink()" id="copy-button">Copy Link</button>
-    <form action="/send_email" method="post">
-      <label for="name">Email a friend with a message!</label><br>
-      <input type="text" name="Email" placeholder="Message"><br>
-      <input type="submit" value="Send">
-    </form>
+    <button onclick="getLink()" id="buttons">Copy Link</button>
+
+    <div class="email-form-container">
+      <form action="/send_email" method="post">
+        <label for="name" id="form-header">or...<br>Email Yule Log with a message!</label><br>
+
+        <div class="form-section">
+          <label for="name">From: </label><br>
+          <input type="text" name="sender-name" placeholder="Your Name"><br>
+        </div>
+
+        <div class="form-section">
+          <label for="name">To: </label><br>
+          <input type="text" name="recipient-name" placeholder="Recipient Name"><br>
+        </div>
+
+        <div class="form-section">
+          <label for="name">Recipient Email Address: </label><br>
+          <input type="text" name="recipient-email" placeholder="Email"><br>
+        </div>
+
+        <div class="form-section">
+          <label for="name">Message:</label><br>
+          <input type="text" name="email-message" placeholder="Write something here..."><br>
+        </div>
+
+        <div class="form-section">
+          <label for="name">Yule Log Link:</label><br>
+          {{ link_form_html | safe }}
+        </div>
+
+        <div class="form-section">
+          <input type="submit" value="Send" id="buttons">
+        </div>
+      </form>
+    </div>
+    <div class="icons-footer">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 </body>
 </html>

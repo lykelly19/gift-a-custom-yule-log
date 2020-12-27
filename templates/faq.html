@@ -5,15 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yule Log</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+    html {
+      background: #c2fff4;
+      font-family: Roboto, sans-serif;
+      text-align: center;
+    }
+    body { margin-top: 8%; }
+    h1 { font-size: 55px; }
+    .back-button-container {
+      position: absolute;
+      top: 15px;
+      left: 2px;
+    }
+    .back-button {
+      border-radius: 25px;
+      background-color: #0358ad;
+      color: white;
+      font-size: 15px;
+      border: none;
+      text-decoration: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    .question-answer-container { margin-bottom: 30px; }
+    #snowflake-img {
+      width: 90px;
+      margin-bottom: -10px;
+    }
+    .icons-footer {
+      font-size: 8px;
+      position: absolute;
+      bottom: 25px;
+    }
+    .content-container {
+      width: 70%;
+      margin: auto;
+    }
+    </style>
 </head>
 <body>
+  <div class="back-button-container">
+    <form action="/" method="post">
+      <input class="back-button" type="submit" name="submit_button" value="< Back">
+    </form>
+  </div>
+  <img src="{{ url_for('static', filename='snowflake.png') }}" id="snowflake-img">
   <h1>FAQs</h1>
-  <h3>Why Yule Log?</h3>
-  <p>The holidays are certainly a bit different this year due to the pandemic. Yule Log
-    was created so you can gift your friends and family members something that is unique.</p>
-  <h3>How does the song lyric generator work?</h3>
-  <p>The song lyric generator uses Markov chains</p>
-  <h3>Where can I learn more?</h3>
-  <p>Check out our Devpost page!</p>
+  <div class="content-container">
+    <div class="question-answer-container">
+      <h3>Why Yule Log?</h3>
+      <p>The holidays are certainly a bit different this year due to the pandemic. Yule Log
+        was created so you can gift your friends and family members something that is unique.
+        Simply select a Spotify playlist and share a Yule Log fireplace -- all while being environmentally-friendly.
+      </p>
+    </div>
+    <div class="question-answer-container">
+      <h3>Where can I learn more about this project?</h3>
+      <p>Check out our Devpost page!</p>
+    </div>
+  </div>
+  <div class="icons-footer">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 </body>
 </html>
