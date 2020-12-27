@@ -3,11 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Send Yule Log</title>
+    <title>Gift this Yule Log</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+    html {
+      background: #c2fff4;
+      font-family: Roboto, sans-serif;
+      text-align: center;
+    }
+    body { margin-top: 3%; }
+    h1 { font-size: 55px; }
+    #playlist-link {
+      border-radius: 25px;
+      background-color: #3fe8bb;
+      font-size: 20px;
+      border: none;
+      padding: 10px 20px;
+      cursor: text;
+      margin: 5px;
+      opacity: 85%;
+      width: 380px;
+    }
+    #copy-button {
+      border-radius: 25px;
+      background-color: #34bf9a;
+      font-size: 20px;
+      border: none;
+      text-decoration: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    #copy-button:hover { opacity: 80%; }
+    #yule-log-img {
+      width: 90px;
+      margin-bottom: -20px;
+    }
+    #share-link-caption {
+      font-size: 16px;
+    }
+    </style>
+    <script>
+    function getLink() {
+      var copyText = document.getElementById("playlist-link");
+
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+
+      document.execCommand("copy");
+      alert("Copied text!");
+    }
+    </script>
 </head>
 <body>
-      {{ html_playlist_string | safe }}
-      {{ shareable_link }}
+    <img src="{{ url_for('static', filename='yule_log.svg') }}" id="yule-log-img">
+    <h1>Gift this Yule Log!</h1>
+    {{ html_playlist_string | safe }}
+    <p id="share-link-caption">Share this link!</p>
+    {{ shareable_link_html | safe }}
+    <button onclick="getLink()" id="copy-button">Copy Link</button>
+    <form action="/send_email" method="post">
+      <label for="name">Email a friend with a message!</label><br>
+      <input type="text" name="Email" placeholder="Message"><br>
+      <input type="submit" value="Send">
+    </form>
 </body>
 </html>

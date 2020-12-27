@@ -43,13 +43,16 @@ def share_yule_log():
 @app.route('/send_yule_log', methods=['POST', 'GET'])
 def send_yule_log():
     playlist_id = request.form['playlist-string']
+    playlist_html = ""
+    shareable_link_html = ""
     if playlist_id is not None:
         params = playlist_id.split(':')
         if len(params) == 3:
-            shareable_link = BASE_URL + "/yule_log?playlist_id=" + playlist_id
+            link = "{}{}{}".format(BASE_URL, '/yule_log?playlist_id=', playlist_id)
+            shareable_link_html = '<input type="text" value=' + link + ' id=playlist-link>'
             playlist_html = '<iframe src="https://open.spotify.com/embed/{}/{}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" id="spotify-playlist"></iframe>'.format(params[1], params[2])
 
-    return render_template('send_yule_log.html', html_playlist_string=playlist_html, shareable_link=shareable_link)
+    return render_template('send_yule_log.html', html_playlist_string=playlist_html, shareable_link_html=shareable_link_html)
 
 @app.route('/faq', methods=['POST', 'GET'])
 def display_faq_page():

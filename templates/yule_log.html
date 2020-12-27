@@ -22,10 +22,6 @@
 </head>
 <body>
     <div class="spotify-playlist-container">
-      <form action="/yule_log" method="get">
-        <input id="text-input" type="text" name="playlist-string" placeholder="Spotify ID"><br>
-        <input id="submit-button" type="submit" value="Submit">
-      </form>
       {{ html_playlist_string | safe }}
     </div>
 </body>
