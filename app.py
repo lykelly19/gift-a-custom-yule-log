@@ -71,7 +71,7 @@ def send_yule_log_email():
     try:
         s = smtplib.SMTP('smtp.gmail.com', 587)
         s.starttls()
-        s.login(GMAIL_USER, gmail_password)
+        s.login(GMAIL_USER, GMAIL_PASSWORD)
 
         print(message)
 
